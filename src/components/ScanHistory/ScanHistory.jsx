@@ -6,12 +6,12 @@ export const ScanHistory = () => {
 	return (
 			<div>
 				{data.map((text) => (
-						<ol>
+						<ul>
 							<li key={text}>
 								{text}
 								<p><QRCodeSVG value={text} size={100}/> </p>
 							</li>
-						</ol>
+						</ul>
 				))}
 			</div>
 	)

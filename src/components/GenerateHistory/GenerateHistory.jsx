@@ -1,4 +1,5 @@
 import {GENERATE_DATA} from "../../constanst.js";
+import {QRCodeSVG} from "qrcode.react";
 
 export const GenerateHistory = () => {
 	const data = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]');
@@ -6,7 +7,12 @@ export const GenerateHistory = () => {
 	return (
 			<div>
 				{data.map((text) => (
-						<p>{text}</p>
+						<ul>
+							<li key={text}>
+								{text}
+								<p><QRCodeSVG value={text} size={100}/></p>
+							</li>
+						</ul>
 				))}
 			</div>
 	)
